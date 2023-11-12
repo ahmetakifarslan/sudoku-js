@@ -9,14 +9,17 @@ export default class Sudoku {
     this.rows = rows;
     this.cols = cols;
     this.totalCells = rows * cols;
-    this.generateEmptyBoard();
+    this.board = this.generateEmptyBoard(this.rows, this.cols);
   }
 
-  generateEmptyBoard() {
-    for (let index = 0; index < this.rows; index++) {
-      const row = new Array(this.cols).fill(null, 0, this.cols);
-      this.board.push(row);
+  generateEmptyBoard(rows, cols) {
+    const board = [];
+    for (let index = 0; index < rows; index++) {
+      const row = new Array(cols).fill(null, 0, cols);
+      board.push(row);
     }
+
+    return board;
   }
 
   generateRandomInteger() {

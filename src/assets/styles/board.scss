@@ -1,0 +1,53 @@
+@import "./variables.module.scss";
+
+.sudoku {
+  position: relative;
+  width: max-content;
+  height: max-content;
+
+  table {
+    border-collapse: collapse;
+    border: $square-border;
+  }
+
+  &-board {
+    position: relative;
+    z-index: 1;
+
+    tr > td {
+      border: $cell-border;
+      input {
+        box-sizing: border-box;
+        width: $cell-width;
+        height: $cell-height;
+        padding: 0;
+        border: none;
+        text-align: center;
+        font-weight: bold;
+        font-size: $input-font-size;
+        transition: outline 0.15s ease-in-out;
+        cursor: pointer;
+
+        &:focus {
+          outline: $square-border;
+        }
+
+        &:hover {
+          outline: $square-border;
+        }
+      }
+    }
+  }
+
+  &-square-board {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    td {
+      border: $square-border;
+    }
+  }
+}

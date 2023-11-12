@@ -1,0 +1,28 @@
+:export {
+  cols: 9;
+  rows: 9;
+  squareCols: 3;
+  squareRows: 3;
+}
+
+:root {
+  --rows: 2;
+  --cols: 9;
+  --cell-width: 40px;
+  --cell-height: 40px;
+  --cell-border-color: #5d5d5d;
+  --square-border-color: #2a2a2a;
+  --input-font-size: 16px;
+}
+
+$rows: var(--rows);
+$cols: var(--cols);
+$cell-width: var(--cell-width);
+$cell-height: var(--cell-height);
+$cell-border-color: var(--cell-border-color);
+$square-border-color: var(--square-border-color);
+$cell-border: 1px solid $cell-border-color;
+$square-border: 2px solid $square-border-color;
+$table-border: $square-border;
+$input-focus-border: $square-border;
+$input-font-size: var(--input-font-size);
