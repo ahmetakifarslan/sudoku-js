@@ -1,0 +1,39 @@
+$rows: 9;
+$cols: 9;
+$cell-width: 30px;
+$cell-height: 30px;
+$cell-background: #b3b3b3;
+
+.board {
+  &-grid {
+    display: grid;
+    width: max-content;
+    grid-template-columns: repeat($cols, $cell-width);
+    grid-template-rows: repeat($rows, $cell-height);
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+  }
+  &-cell {
+    text-align: center;
+    border-radius: 0 !important;
+    border-width: 1px !important;
+    border-bottom: none;
+    border-left: none;
+    font-weight: bold;
+    position: relative;
+
+    &:hover {
+      background-color: rgba($cell-background, 0.2);
+      cursor: pointer;
+    }
+
+    &:focus {
+      outline: 1px solid black;
+      border: 1px solid black;
+      z-index: 2;
+      top: 0.5px;
+      left: -0.5px;
+      caret-color: rgba($cell-background, 0.8);
+    }
+  }
+}
